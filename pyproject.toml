@@ -3,8 +3,13 @@ name = "nutstosoup"
 version = "0.1.0"
 description = "Nuts to Soup module for interacting with the NTS Radio API"
 authors = []
-dependencies = ["requests>=2.31.0"]
+dependencies = [
+    "requests>=2.31.0",
+]
 requires-python = ">=3.8"
+
+[project.optional-dependencies]
+dev = ["pytest>=7.0.0"]
 
 [build-system]
 requires = ["hatchling"]

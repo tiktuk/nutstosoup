@@ -82,6 +82,8 @@ def fetch_nts_api(endpoint: str, timeout: int = 10) -> Dict[str, Any]:
     except Timeout:
         raise NTSAPITimeoutError("Request timed out")
     except RequestException as e:
+        if "404" in str(e):
+            raise NTSAPIResponseError(404, str(e))
         if hasattr(e, "response") and e.response is not None:
             raise NTSAPIResponseError(e.response.status_code, str(e))
         raise NTSAPIError(f"Request failed: {str(e)}")
