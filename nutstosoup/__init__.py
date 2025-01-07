@@ -21,6 +21,7 @@ class Broadcast:
     show_alias: str | None = None
     episode_alias: str | None = None
     picture_url: str | None = None
+    raw_json: Dict[str, Any] | None = None
 
 
 @dataclass
@@ -34,6 +35,7 @@ class Mixtape:
     mixtape_alias: str
     picture_url: str | None = None
     credits: list[dict[str, str]] | None = None
+    raw_json: Dict[str, Any] | None = None
 
 
 class NTSAPIError(Exception):
@@ -149,6 +151,7 @@ def get_mixtapes(timeout: int = 10) -> Dict[str, Mixtape]:
             mixtape_alias=mixtape["mixtape_alias"],
             picture_url=picture_url,
             credits=mixtape.get("credits"),
+            raw_json=mixtape,
         )
 
     return mixtapes
@@ -192,6 +195,7 @@ def get_current_broadcasts(timeout: int = 10) -> List[Broadcast]:
                     show_alias=details.get("show_alias"),
                     episode_alias=details.get("episode_alias"),
                     picture_url=picture_url,
+                    raw_json=broadcast,
                 )
             )
 

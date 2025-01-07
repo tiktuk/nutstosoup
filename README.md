@@ -46,6 +46,7 @@ class Broadcast:
     show_alias: str | None     # Show alias for URLs (optional)
     episode_alias: str | None  # Episode alias for URLs (optional)
     picture_url: str | None    # Show artwork URL (optional)
+    raw_json: Dict[str, Any] | None  # Original API response data (optional)
 ```
 
 ### Mixtape
@@ -62,6 +63,7 @@ class Mixtape:
     mixtape_alias: str       # Mixtape alias for URLs
     picture_url: str | None  # Artwork URL (optional)
     credits: list[dict[str, str]] | None  # Contributing shows (optional)
+    raw_json: Dict[str, Any] | None  # Original API response data (optional)
 ```
 
 ## Usage
@@ -104,6 +106,10 @@ try:
             if len(mixtape.credits) > 5:
                 print(f"...and {len(mixtape.credits) - 5} more")
         print(f"Stream URL: {mixtape.stream_url}")
+        
+        # Access additional fields from the raw API response
+        if mixtape.raw_json and "some_extra_field" in mixtape.raw_json:
+            print(f"Extra field: {mixtape.raw_json['some_extra_field']}")
         
     # Get a specific mixtape by alias
     poolside = mixtapes.get("poolside")
