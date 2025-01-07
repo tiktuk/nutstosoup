@@ -28,45 +28,38 @@ All functions accept an optional `timeout` parameter (in seconds, defaults to 10
 
 ```python
 from nutstosoup import (
-    get_nts_live_data, 
-    get_nts_mixtapes_data,
+    get_current_broadcasts,
+    get_mixtapes,
     NTSAPIError,
     NTSAPITimeoutError,
     NTSAPIResponseError
 )
 
 try:
-    # Get current broadcast data
-    live_data = get_nts_live_data(timeout=10)  # timeout in seconds
+    # Get current broadcasts for both channels
+    broadcasts = get_current_broadcasts(timeout=10)  # timeout in seconds
     
-    # Get current show on channel 1
-    channel_1 = live_data["results"][0]
-    current_show = channel_1["now"]
-    print(f"Now playing on Channel 1: {current_show['broadcast_title']}")
-    
-    # Get show details if available
-    if "details" in current_show["embeds"]:
-        details = current_show["embeds"]["details"]
-        print(f"Description: {details['description']}")
-        print(f"Location: {details['location_long']}")
-        
-        # Get genres if available
-        if details["genres"]:
-            genres = [genre["value"] for genre in details["genres"]]
-            print(f"Genres: {', '.join(genres)}")
-    
-    # Get upcoming shows
-    next_show = channel_1["next"]
-    print(f"\nUp next: {next_show['broadcast_title']}")
-    print(f"Starts at: {next_show['start_timestamp']}")
+    # Print current shows
+    for broadcast in broadcasts:
+        print(f"Now playing on Channel {broadcast['channel']}: {broadcast['title']}")
+        print(f"Start time: {broadcast['start_time']}")
+        print(f"End time: {broadcast['end_time']}")
 
-    # Get mixtapes data
-    mixtapes_data = get_nts_mixtapes_data()
-    # Print available mixtape streams
-    for mixtape in mixtapes_data["results"]:
+    # Get all mixtapes
+    mixtapes = get_mixtapes()
+    
+    # Print available mixtapes
+    for mixtape in mixtapes.values():
         print(f"\n{mixtape['title']}")
+        print(f"{mixtape['subtitle']}")
         print(f"Description: {mixtape['description']}")
-        print(f"Stream URL: {mixtape['audio_stream_endpoint']}")
+        print(f"Stream URL: {mixtape['stream_url']}")
+        
+    # Get a specific mixtape by alias
+    poolside = mixtapes.get("poolside")
+    if poolside:
+        print(f"\nPoolside mixtape: {poolside['title']}")
+        print(f"Stream URL: {poolside['stream_url']}")
 
 except NTSAPITimeoutError:
     print("Request timed out")
@@ -79,20 +72,25 @@ except NTSAPIError as e:
 Example output:
 ```
 Now playing on Channel 1: TED DRAWS
-Description: Hip-hop scholar, esteemed illustrator and all round head Ted Draws holds down a killer 2 hour monthly slot on Tuesday afternoons.
-Location: London
-Genres: Gangsta Rap, Classic Hip Hop, Hip Hop
+Start time: 2025-01-07T15:00:00Z
+End time: 2025-01-07T17:00:00Z
 
-Up next: QUEST NO MORE W/ ELHEIST
-Starts at: 2025-01-07T17:00:00Z
+Now playing on Channel 2: ARRHYTHMIA
+Start time: 2025-01-07T14:00:00Z
+End time: 2025-01-07T16:00:00Z
 
 Poolside
-Description: Balearic, boogie, and sophisti-pop for poolsides, beaches and car stereos.
+Balearic, boogie, and sophisti-pop for poolsides, beaches and car stereos.
+Description: Whisk yourself away with an unlimited supply of NTS' most sun-kissed mixes, crossing all borders and genres.
 Stream URL: https://stream-mixtape-geo.ntslive.net/mixtape4
 
 Slow Focus
-Description: Meditative, relaxing and beatless: ambient, drone and ragas.
+Meditative, relaxing and beatless: ambient, drone and ragas.
+Description: Tune in and zone out with NTS' compendium of the beatless and transcendental. Calming sounds to help you focus or drift away.
 Stream URL: https://stream-mixtape-geo.ntslive.net/mixtape
+
+Poolside mixtape: Poolside
+Stream URL: https://stream-mixtape-geo.ntslive.net/mixtape4
 ```
 
 ## Simple Test CLI

@@ -1,7 +1,7 @@
 """Module for interacting with the NTS Radio API."""
 
 import requests
-from typing import Dict, Any
+from typing import Dict, Any, List
 from requests.exceptions import RequestException, Timeout
 
 
@@ -84,3 +84,67 @@ def get_nts_mixtapes_data(timeout: int = 10) -> Dict[str, Any]:
         NTSAPIError: For other API-related errors
     """
     return fetch_nts_api("mixtapes", timeout)
+
+
+def get_mixtapes(timeout: int = 10) -> Dict[str, Dict[str, Any]]:
+    """Get a simplified dictionary of NTS mixtapes.
+    
+    Args:
+        timeout: Request timeout in seconds
+    
+    Returns:
+        Dictionary with mixtape aliases as keys and mixtape info as values
+
+    Raises:
+        NTSAPIResponseError: If the API returns an unsuccessful status code
+        NTSAPITimeoutError: If the request times out
+        NTSAPIError: For other API-related errors
+    """
+    mixtapes_data = get_nts_mixtapes_data(timeout)
+    
+    if not mixtapes_data or "results" not in mixtapes_data:
+        raise NTSAPIError("Invalid mixtapes data format")
+        
+    mixtapes = {}
+    for mixtape in mixtapes_data["results"]:
+        mixtapes[mixtape["mixtape_alias"]] = {
+            "title": mixtape["title"],
+            "subtitle": mixtape["subtitle"],
+            "description": mixtape["description"],
+            "stream_url": mixtape["audio_stream_endpoint"]
+        }
+    
+    return mixtapes
+
+
+def get_current_broadcasts(timeout: int = 10) -> List[Dict[str, Any]]:
+    """Get a list of current broadcasts for both NTS channels.
+    
+    Args:
+        timeout: Request timeout in seconds
+    
+    Returns:
+        List of current broadcasts
+
+    Raises:
+        NTSAPIResponseError: If the API returns an unsuccessful status code
+        NTSAPITimeoutError: If the request times out
+        NTSAPIError: For other API-related errors
+    """
+    live_data = get_nts_live_data(timeout)
+    
+    if not live_data or "results" not in live_data:
+        raise NTSAPIError("Invalid live data format")
+        
+    broadcasts = []
+    for channel in live_data["results"]:
+        if "now" in channel:
+            broadcast = channel["now"]
+            broadcasts.append({
+                "channel": channel["channel_name"],
+                "title": broadcast["broadcast_title"],
+                "start_time": broadcast["start_timestamp"],
+                "end_time": broadcast["end_timestamp"]
+            })
+    
+    return broadcasts

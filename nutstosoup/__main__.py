@@ -1,8 +1,8 @@
 """Command-line interface for NTS API client."""
 
 from . import (
-    get_nts_live_data,
-    get_nts_mixtapes_data,
+    get_current_broadcasts,
+    get_mixtapes,
     NTSAPIError,
     NTSAPITimeoutError,
     NTSAPIResponseError,
@@ -13,52 +13,29 @@ def main():
     """Display currently playing shows and mixtapes on NTS Radio."""
     try:
         # Display live channels
-        live_data = get_nts_live_data()
-        
-        if not live_data or "results" not in live_data:
-            print("Error: Invalid response from NTS Live API")
-            return
+        broadcasts = get_current_broadcasts()
 
         print("Live Channels")
         print("-------------")
-        for channel in live_data["results"]:
-            channel_name = f"Channel {channel['channel_name']}"
+        for broadcast in broadcasts:
+            channel_name = f"Channel {broadcast.get('channel')}"
             print(f"\n{channel_name}")
             print("-" * len(channel_name))
-
-            now = channel.get("now")
-            if now:
-                print(f"{now['broadcast_title']} 🔴")
-
-                details = now.get("embeds", {}).get("details", {})
-                if details:
-                    if "location_long" in details:
-                        print(f"{details['location_long']}")
-                    if "description" in details:
-                        print(f"\n{details['description']}")
-                    if "genres" in details and details["genres"]:
-                        genres = [g["value"] for g in details["genres"]]
-                        if genres:
-                            print(f"\n{', '.join(genres)}")
+            print(f"{broadcast.get('title')} 🔴")
+            print(f"Start: {broadcast.get('start_time')}")
+            print(f"End: {broadcast.get('end_time')}")
 
         # Display mixtapes
-        mixtapes_data = get_nts_mixtapes_data()
-        
-        if not mixtapes_data or "results" not in mixtapes_data:
-            print("\nError: Invalid response from NTS Mixtapes API")
-            return
+        mixtapes = get_mixtapes()
 
         print("\nMixtapes")
         print("--------")
-        for mixtape in mixtapes_data["results"]:
-            print(f"\n{mixtape['title']}")
-            print("-" * len(mixtape['title']))
-            if mixtape.get("subtitle"):
-                print(f"{mixtape['subtitle']}")
-            if mixtape.get("description"):
-                print(f"\n{mixtape['description']}")
-            if mixtape.get("audio_stream_endpoint"):
-                print(f"\n🎵 {mixtape['audio_stream_endpoint']}")
+        for mixtape in mixtapes.values():
+            print(f"\n{mixtape.get('title')}")
+            print("-" * len(mixtape.get("title", "")))
+            print(f"{mixtape.get('subtitle')}")
+            print(f"\n{mixtape.get('description')}")
+            print(f"\n🎵 {mixtape.get('stream_url')}")
 
     except NTSAPITimeoutError:
         print("Error: Request timed out")
