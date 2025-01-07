@@ -49,6 +49,98 @@ class Broadcast:
     raw_json: Dict[str, Any] | None  # Original API response data (optional)
 ```
 
+Example of the json of a broadcast:
+
+```json
+{
+    "broadcast_title": "CALM ROOTS W/ ALEX RITA LONDON (R)",
+    "start_timestamp": "2024-12-30T08:00:00Z",
+    "end_timestamp": "2024-12-30T10:00:00Z",
+    "embeds": {
+        "details": {
+            "status": "published",
+            "updated": "2024-07-23T09:25:30+00:00",
+            "name": "Calm Roots w/ Alex Rita",
+            "description": "Hypnotic & meditative sounds from Touching Bass' Alex Rita.",
+            "description_html": "<h3>Hypnotic & meditative sounds from Touching Bass' Alex Rita.</h3>",
+            "external_links": [
+                "https://en-gb.facebook.com/alexritaa/",
+                "https://soundcloud.com/alexrita"
+            ],
+            "moods": [
+                {
+                    "id": "moods-the-healing-place",
+                    "value": "The Healing Place"
+                }
+            ],
+            "genres": [
+                {
+                    "id": "genres-jazz-ambientjazz",
+                    "value": "Ambient Jazz"
+                },
+                {
+                    "id": "genres-ambientnewage-ambient",
+                    "value": "Ambient"
+                }
+            ],
+            "location_short": "LDN",
+            "location_long": "London",
+            "intensity": null,
+            "media": {
+                "background_large": "https://media2.ntslive.co.uk/resize/1600x1600/d0faf1f8-0daa-486f-bbcd-607f6b0f4331_1570406400.png",
+                "background_medium_large": "https://media2.ntslive.co.uk/resize/800x800/d0faf1f8-0daa-486f-bbcd-607f6b0f4331_1570406400.png",
+                "background_medium": "https://media.ntslive.co.uk/resize/400x400/d0faf1f8-0daa-486f-bbcd-607f6b0f4331_1570406400.png",
+                "background_small": "https://media3.ntslive.co.uk/resize/200x200/d0faf1f8-0daa-486f-bbcd-607f6b0f4331_1570406400.png",
+                "background_thumb": "https://media3.ntslive.co.uk/resize/100x100/d0faf1f8-0daa-486f-bbcd-607f6b0f4331_1570406400.png",
+                "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/d0faf1f8-0daa-486f-bbcd-607f6b0f4331_1570406400.png",
+                "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/d0faf1f8-0daa-486f-bbcd-607f6b0f4331_1570406400.png",
+                "picture_medium": "https://media.ntslive.co.uk/resize/400x400/d0faf1f8-0daa-486f-bbcd-607f6b0f4331_1570406400.png",
+                "picture_small": "https://media3.ntslive.co.uk/resize/200x200/d0faf1f8-0daa-486f-bbcd-607f6b0f4331_1570406400.png",
+                "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/d0faf1f8-0daa-486f-bbcd-607f6b0f4331_1570406400.png"
+            },
+            "episode_alias": "calm-roots-22nd-july-2024",
+            "show_alias": "calm-roots",
+            "broadcast": "2024-07-22T19:00:00+00:00",
+            "mixcloud": "https://www.mixcloud.com/NTSRadio/calm-roots-w-alex-rita-22nd-july-2024/",
+            "audio_sources": [
+                {
+                    "url": "https://soundcloud.com/user-643553014/calm-roots-w-alex-rita-220724",
+                    "source": "soundcloud"
+                }
+            ],
+            "brand": {},
+            "embeds": {},
+            "links": [
+                {
+                    "rel": "self",
+                    "href": "https://www.nts.live/api/v2/shows/calm-roots/episodes/calm-roots-22nd-july-2024",
+                    "type": "application/vnd.episode+json;charset=utf-8"
+                },
+                {
+                    "rel": "show",
+                    "href": "https://www.nts.live/api/v2/shows/calm-roots",
+                    "type": "application/vnd.show+json;charset=utf-8"
+                },
+                {
+                    "rel": "tracklist",
+                    "href": "https://www.nts.live/api/v2/shows/calm-roots/episodes/calm-roots-22nd-july-2024/tracklist",
+                    "type": "application/vnd.track-list+json;charset=utf-8"
+                }
+            ]
+        }
+    },
+    "links": [
+        {
+            "href": "https://www.nts.live/api/v2/shows/calm-roots/episodes/calm-roots-22nd-july-2024",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+        }
+    ]
+}
+```
+
+There's a full example of broadcast json in the `examples` directory.
+
 ### Mixtape
 
 Represents an NTS mixtape:
@@ -65,6 +157,8 @@ class Mixtape:
     credits: list[dict[str, str]] | None  # Contributing shows (optional)
     raw_json: Dict[str, Any] | None  # Original API response data (optional)
 ```
+
+There's an example of mixtape json in the `examples` directory.
 
 ## Usage
 
