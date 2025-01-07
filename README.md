@@ -27,9 +27,3 @@ if error:
 else:
     print(mixtapes_data)
 ```
-
-## Stream URLs
-
-The module provides stream URLs for NTS channels:
-- Channel 1: https://stream-relay-geo.ntslive.net/stream
-- Channel 2: https://stream-relay-geo.ntslive.net/stream2

@@ -3,11 +3,6 @@
 import requests
 from typing import Tuple, Dict, Optional, Any
 
-STREAM_URLS = {
-    "1": "https://stream-relay-geo.ntslive.net/stream",
-    "2": "https://stream-relay-geo.ntslive.net/stream2",
-}
-
 
 def fetch_nts_api(endpoint: str) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
     """Fetch data from NTS API endpoint.
