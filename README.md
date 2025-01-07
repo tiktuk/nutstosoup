@@ -35,12 +35,12 @@ Represents a live broadcast on an NTS channel:
 ```python
 @dataclass
 class Broadcast:
-    channel: str              # Channel name (e.g. "1", "2")
-    title: str               # Broadcast title
-    start_time: str          # Start timestamp
-    end_time: str            # End timestamp
-    name: str | None         # Show name (optional)
-    description: str | None  # Show description (optional)
+    channel: str               # Channel name (e.g. "1", "2")
+    title: str                 # Broadcast title
+    start_time: str            # Start timestamp
+    end_time: str              # End timestamp
+    name: str | None           # Show name (optional)
+    description: str | None    # Show description (optional)
     location_short: str | None  # Short location code (optional)
     location_long: str | None   # Full location name (optional)
     show_alias: str | None     # Show alias for URLs (optional)
