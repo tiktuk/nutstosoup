@@ -1,5 +1,6 @@
 """Module for interacting with the NTS Radio API."""
 
+import html
 import requests
 from dataclasses import dataclass
 from typing import Dict, Any, List
@@ -187,7 +188,7 @@ def get_current_broadcasts(timeout: int = 10) -> List[Broadcast]:
             broadcasts.append(
                 Broadcast(
                     channel=channel["channel_name"],
-                    title=broadcast["broadcast_title"],
+                    title=html.unescape(broadcast["broadcast_title"]),
                     start_time=broadcast["start_timestamp"],
                     end_time=broadcast["end_timestamp"],
                     name=details.get("name"),
