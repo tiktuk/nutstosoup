@@ -1,0 +1,13 @@
+[project]
+name = "nts-api-client"
+version = "0.1.0"
+description = "NTS API client module for interacting with the NTS Radio API"
+authors = []
+dependencies = [
+    "requests>=2.31.0",
+]
+requires-python = ">=3.8"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
