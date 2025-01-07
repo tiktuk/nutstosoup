@@ -1,29 +1,44 @@
-# NTS API Client
+# Nuts to Soup
 
 A Python client for interacting with the NTS Radio API.
 
 ## Installation
 
 ```bash
-uv add nts-api-client
+uv add nutstosoup
 ```
 
 or
 
 ```bash
-pip3 install nts-api-client
+pip3 install nutstosoup
 ```
+
+## Error Handling
+
+The library uses exceptions to handle errors:
+
+- `NTSAPIError`: Base exception for all API-related errors
+- `NTSAPIResponseError`: Raised when the API returns an unsuccessful status code (includes status_code attribute)
+- `NTSAPITimeoutError`: Raised when the request times out
+
+All functions accept an optional `timeout` parameter (in seconds, defaults to 10) to configure request timeouts.
 
 ## Usage
 
 ```python
-from nts_api_client import get_nts_live_data, get_nts_mixtapes_data
+from nutstosoup import (
+    get_nts_live_data, 
+    get_nts_mixtapes_data,
+    NTSAPIError,
+    NTSAPITimeoutError,
+    NTSAPIResponseError
+)
 
-# Get current broadcast data
-live_data, error = get_nts_live_data()
-if error:
-    print(f"Error: {error}")
-else:
+try:
+    # Get current broadcast data
+    live_data = get_nts_live_data(timeout=10)  # timeout in seconds
+    
     # Get current show on channel 1
     channel_1 = live_data["results"][0]
     current_show = channel_1["now"]
@@ -45,16 +60,20 @@ else:
     print(f"\nUp next: {next_show['broadcast_title']}")
     print(f"Starts at: {next_show['start_timestamp']}")
 
-# Get mixtapes data
-mixtapes_data, error = get_nts_mixtapes_data()
-if error:
-    print(f"Error: {error}")
-else:
+    # Get mixtapes data
+    mixtapes_data = get_nts_mixtapes_data()
     # Print available mixtape streams
     for mixtape in mixtapes_data["results"]:
         print(f"\n{mixtape['title']}")
         print(f"Description: {mixtape['description']}")
         print(f"Stream URL: {mixtape['audio_stream_endpoint']}")
+
+except NTSAPITimeoutError:
+    print("Request timed out")
+except NTSAPIResponseError as e:
+    print(f"API error {e.status_code}: {str(e)}")
+except NTSAPIError as e:
+    print(f"API error: {str(e)}")
 ```
 
 Example output:
@@ -81,7 +100,7 @@ Stream URL: https://stream-mixtape-geo.ntslive.net/mixtape
 You can test it's working by running:
 
 ```bash
-    python3 -m nts_api_client
+    python3 -m nutstosoup
 ```
 
 It should print out the current live data and mixtapes data:
