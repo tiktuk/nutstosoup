@@ -5,7 +5,13 @@ A Python client for interacting with the NTS Radio API.
 ## Installation
 
 ```bash
-uv pip install nts-api-client
+uv add nts-api-client
+```
+
+or
+
+```bash
+pip3 install nts-api-client
 ```
 
 ## Usage
@@ -18,14 +24,56 @@ live_data, error = get_nts_live_data()
 if error:
     print(f"Error: {error}")
 else:
-    print(live_data)
+    # Get current show on channel 1
+    channel_1 = live_data["results"][0]
+    current_show = channel_1["now"]
+    print(f"Now playing on Channel 1: {current_show['broadcast_title']}")
+    
+    # Get show details if available
+    if "details" in current_show["embeds"]:
+        details = current_show["embeds"]["details"]
+        print(f"Description: {details['description']}")
+        print(f"Location: {details['location_long']}")
+        
+        # Get genres if available
+        if details["genres"]:
+            genres = [genre["value"] for genre in details["genres"]]
+            print(f"Genres: {', '.join(genres)}")
+    
+    # Get upcoming shows
+    next_show = channel_1["next"]
+    print(f"\nUp next: {next_show['broadcast_title']}")
+    print(f"Starts at: {next_show['start_timestamp']}")
 
 # Get mixtapes data
 mixtapes_data, error = get_nts_mixtapes_data()
 if error:
     print(f"Error: {error}")
 else:
-    print(mixtapes_data)
+    # Print available mixtape streams
+    for mixtape in mixtapes_data["results"]:
+        print(f"\n{mixtape['title']}")
+        print(f"Description: {mixtape['description']}")
+        print(f"Stream URL: {mixtape['audio_stream_endpoint']}")
+```
+
+Example output:
+```
+Now playing on Channel 1: TED DRAWS
+Description: Hip-hop scholar, esteemed illustrator and all round head Ted Draws holds down a killer 2 hour monthly slot on Tuesday afternoons.
+Location: London
+Genres: Gangsta Rap, Classic Hip Hop, Hip Hop
+
+Up next: QUEST NO MORE W/ ELHEIST
+Starts at: 2025-01-07T17:00:00Z
+
+Poolside
+Description: Balearic, boogie, and sophisti-pop for poolsides, beaches and car stereos.
+Stream URL: https://stream-mixtape-geo.ntslive.net/mixtape4
+
+Slow Focus
+Description: Meditative, relaxing and beatless: ambient, drone and ragas.
+Stream URL: https://stream-mixtape-geo.ntslive.net/mixtape
 ```
 
 ## Simple Test CLI
