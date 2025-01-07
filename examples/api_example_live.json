@@ -1,0 +1,753 @@
+{
+  "results": [
+    {
+      "channel_name": "1",
+      "now": {
+        "broadcast_title": "TED DRAWS",
+        "start_timestamp": "2025-01-07T15:00:00Z",
+        "end_timestamp": "2025-01-07T17:00:00Z",
+        "embeds": {
+          "details": {
+            "status": "pending",
+            "updated": "2025-01-02T18:19:18+00:00",
+            "name": "Ted Draws",
+            "description": "Hip-hop scholar, esteemed illustrator and all round head Ted Draws holds down a killer 2 hour monthly slot on Tuesday afternoons.",
+            "description_html": "<h3>Hip-hop scholar, esteemed illustrator and all round head Ted Draws holds down a killer 2 hour monthly slot on Tuesday afternoons.</h3>",
+            "external_links": [
+              "http://www.tedsdraws.com/"
+            ],
+            "moods": [
+              {
+                "id": "moods-minimal-talkin",
+                "value": "Minimal Talkin"
+              },
+              {
+                "id": "moods-lean-back",
+                "value": "LEAN BACK"
+              }
+            ],
+            "genres": [
+              {
+                "id": "genres-hiphoprandb-ganstarap",
+                "value": "Gangsta Rap"
+              },
+              {
+                "id": "genres-hiphoprandb-classichiphop",
+                "value": "Classic Hip Hop"
+              },
+              {
+                "id": "genres-hiphoprandb-hiphop",
+                "value": "Hip Hop "
+              }
+            ],
+            "location_short": "LDN",
+            "location_long": "London",
+            "intensity": null,
+            "media": {
+              "background_large": "https://media2.ntslive.co.uk/resize/1600x1600/ee55943b-1f8e-4467-ba5a-b62aa174cbd9_1538006400.jpeg",
+              "background_medium_large": "https://media2.ntslive.co.uk/resize/800x800/ee55943b-1f8e-4467-ba5a-b62aa174cbd9_1538006400.jpeg",
+              "background_medium": "https://media.ntslive.co.uk/resize/400x400/ee55943b-1f8e-4467-ba5a-b62aa174cbd9_1538006400.jpeg",
+              "background_small": "https://media3.ntslive.co.uk/resize/200x200/ee55943b-1f8e-4467-ba5a-b62aa174cbd9_1538006400.jpeg",
+              "background_thumb": "https://media3.ntslive.co.uk/resize/100x100/ee55943b-1f8e-4467-ba5a-b62aa174cbd9_1538006400.jpeg",
+              "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/330d6b2a-fb0f-4a8c-bbd1-a479649510e2_1658793600.jpeg",
+              "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/330d6b2a-fb0f-4a8c-bbd1-a479649510e2_1658793600.jpeg",
+              "picture_medium": "https://media.ntslive.co.uk/resize/400x400/330d6b2a-fb0f-4a8c-bbd1-a479649510e2_1658793600.jpeg",
+              "picture_small": "https://media3.ntslive.co.uk/resize/200x200/330d6b2a-fb0f-4a8c-bbd1-a479649510e2_1658793600.jpeg",
+              "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/330d6b2a-fb0f-4a8c-bbd1-a479649510e2_1658793600.jpeg"
+            },
+            "episode_alias": "ted-draws-7th-january-2025",
+            "show_alias": "TED-DRAWS",
+            "broadcast": "2025-01-07T15:00:00+00:00",
+            "mixcloud": null,
+            "audio_sources": [],
+            "brand": {},
+            "embeds": {},
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://www.nts.live/api/v2/shows/TED-DRAWS/episodes/ted-draws-7th-january-2025",
+                "type": "application/vnd.episode+json;charset=utf-8"
+              },
+              {
+                "rel": "show",
+                "href": "https://www.nts.live/api/v2/shows/TED-DRAWS",
+                "type": "application/vnd.show+json;charset=utf-8"
+              },
+              {
+                "rel": "tracklist",
+                "href": "https://www.nts.live/api/v2/shows/TED-DRAWS/episodes/ted-draws-7th-january-2025/tracklist",
+                "type": "application/vnd.track-list+json;charset=utf-8"
+              }
+            ]
+          }
+        },
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/TED-DRAWS/episodes/ted-draws-7th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next": {
+        "broadcast_title": "QUEST NO MORE W/ ELHEIST",
+        "start_timestamp": "2025-01-07T17:00:00Z",
+        "end_timestamp": "2025-01-07T18:00:00Z",
+        "embeds": {
+          "details": {
+            "status": "pending",
+            "updated": "2025-01-02T18:19:55+00:00",
+            "name": "Quest No More w/ Elheist",
+            "description": "At this point in your quest all you need is here. London based community Quest No More take over the airwaves with a realm of discovery and wholesomeness. Led by south London vocalist and singer Elheist. ",
+            "description_html": "<h3>At this point in your quest all you need is here. London based community Quest No More take over the airwaves with a realm of discovery and wholesomeness. Led by south London vocalist and singer Elheist. </h3>",
+            "external_links": [],
+            "moods": [
+              {
+                "id": "moods-lean-back",
+                "value": "LEAN BACK"
+              }
+            ],
+            "genres": [],
+            "location_short": "LDN",
+            "location_long": "London",
+            "intensity": "50",
+            "media": {
+              "background_large": "https://media2.ntslive.co.uk/resize/1600x1600/8643d4cd-15f8-42cf-bfeb-90caf592eea1_1690243200.jpeg",
+              "background_medium_large": "https://media2.ntslive.co.uk/resize/800x800/8643d4cd-15f8-42cf-bfeb-90caf592eea1_1690243200.jpeg",
+              "background_medium": "https://media.ntslive.co.uk/resize/400x400/8643d4cd-15f8-42cf-bfeb-90caf592eea1_1690243200.jpeg",
+              "background_small": "https://media3.ntslive.co.uk/resize/200x200/8643d4cd-15f8-42cf-bfeb-90caf592eea1_1690243200.jpeg",
+              "background_thumb": "https://media3.ntslive.co.uk/resize/100x100/8643d4cd-15f8-42cf-bfeb-90caf592eea1_1690243200.jpeg",
+              "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/8643d4cd-15f8-42cf-bfeb-90caf592eea1_1690243200.jpeg",
+              "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/8643d4cd-15f8-42cf-bfeb-90caf592eea1_1690243200.jpeg",
+              "picture_medium": "https://media.ntslive.co.uk/resize/400x400/8643d4cd-15f8-42cf-bfeb-90caf592eea1_1690243200.jpeg",
+              "picture_small": "https://media3.ntslive.co.uk/resize/200x200/8643d4cd-15f8-42cf-bfeb-90caf592eea1_1690243200.jpeg",
+              "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/8643d4cd-15f8-42cf-bfeb-90caf592eea1_1690243200.jpeg"
+            },
+            "episode_alias": "quest-no-more-7th-january-2025",
+            "show_alias": "quest-no-more",
+            "broadcast": "2025-01-07T17:00:00+00:00",
+            "mixcloud": null,
+            "audio_sources": [],
+            "brand": {},
+            "embeds": {},
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://www.nts.live/api/v2/shows/quest-no-more/episodes/quest-no-more-7th-january-2025",
+                "type": "application/vnd.episode+json;charset=utf-8"
+              },
+              {
+                "rel": "show",
+                "href": "https://www.nts.live/api/v2/shows/quest-no-more",
+                "type": "application/vnd.show+json;charset=utf-8"
+              },
+              {
+                "rel": "tracklist",
+                "href": "https://www.nts.live/api/v2/shows/quest-no-more/episodes/quest-no-more-7th-january-2025/tracklist",
+                "type": "application/vnd.track-list+json;charset=utf-8"
+              }
+            ]
+          }
+        },
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/quest-no-more/episodes/quest-no-more-7th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next2": {
+        "broadcast_title": "THIRD CIRCLE",
+        "start_timestamp": "2025-01-07T18:00:00Z",
+        "end_timestamp": "2025-01-07T19:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/third-circle/episodes/third-circle-7th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next3": {
+        "broadcast_title": "SURF GANG RADIO w/ Bootee",
+        "start_timestamp": "2025-01-07T19:00:00Z",
+        "end_timestamp": "2025-01-07T20:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/surf-gang/episodes/surf-gang-7th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next4": {
+        "broadcast_title": "RUPTURE W/ MANTRA &amp; DOUBLE O",
+        "start_timestamp": "2025-01-07T20:00:00Z",
+        "end_timestamp": "2025-01-07T21:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/rupture/episodes/rupture-7th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next5": {
+        "broadcast_title": "DANIELLE",
+        "start_timestamp": "2025-01-07T21:00:00Z",
+        "end_timestamp": "2025-01-07T22:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/danielle/episodes/danielle-7th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next6": {
+        "broadcast_title": "THE KRONICLES W/ DJ AMIR",
+        "start_timestamp": "2025-01-08T00:00:00Z",
+        "end_timestamp": "2025-01-08T01:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/the-kronicles-featuring-dj-amir/episodes/the-kronicles-featuring-dj-amir-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next7": {
+        "broadcast_title": "DARIA KOLOSOVA",
+        "start_timestamp": "2025-01-08T01:00:00Z",
+        "end_timestamp": "2025-01-08T02:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/daria-kolosova/episodes/daria-kolosova-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next8": {
+        "broadcast_title": "WE ARE… W/ PAUL CAMO (R)",
+        "start_timestamp": "2025-01-08T03:00:00Z",
+        "end_timestamp": "2025-01-08T05:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/we-are/episodes/we-are-3rd-august-2024",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next9": {
+        "broadcast_title": "SOUNDS OF THE DAWN (R)",
+        "start_timestamp": "2025-01-08T05:00:00Z",
+        "end_timestamp": "2025-01-08T07:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/soundsofthedawn/episodes/soundsofthedawn-13th-july-2024",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next10": {
+        "broadcast_title": "THE EARLY BIRD SHOW W/ SPIRIT BLUE",
+        "start_timestamp": "2025-01-08T07:00:00Z",
+        "end_timestamp": "2025-01-08T09:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/early-bird-show-spirit-blue/episodes/early-bird-show-spirit-blue-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next11": {
+        "broadcast_title": "The NTS Breakfast Show w/ Flo",
+        "start_timestamp": "2025-01-08T09:00:00Z",
+        "end_timestamp": "2025-01-08T11:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/the-breakfast-show-flo/episodes/the-breakfast-show-flo-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next12": {
+        "broadcast_title": "Soup To Nuts w/ Shy One",
+        "start_timestamp": "2025-01-08T11:00:00Z",
+        "end_timestamp": "2025-01-08T13:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/soup-to-nuts-shy-one/episodes/soup-to-nuts-shy-one-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next13": {
+        "broadcast_title": "BRADLEY ZERO PRESENTS: RHYTHM SECTION",
+        "start_timestamp": "2025-01-08T13:00:00Z",
+        "end_timestamp": "2025-01-08T15:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/rhythmsection/episodes/rhythmsection-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next14": {
+        "broadcast_title": "Selassie TBC",
+        "start_timestamp": "2025-01-08T15:00:00Z",
+        "end_timestamp": "2025-01-08T17:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/moxie/episodes/moxie-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next15": {
+        "broadcast_title": "TASH LC",
+        "start_timestamp": "2025-01-08T17:00:00Z",
+        "end_timestamp": "2025-01-08T18:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/tash-lc/episodes/tash-lc-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next16": {
+        "broadcast_title": "Touching Bass w/ Gabriel Moises &amp; Clarissa Bynum",
+        "start_timestamp": "2025-01-08T18:00:00Z",
+        "end_timestamp": "2025-01-08T20:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/touching-bass/episodes/touching-bass-gabriel-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next17": {
+        "broadcast_title": "Giulia Tess",
+        "start_timestamp": "2025-01-08T20:00:00Z",
+        "end_timestamp": "2025-01-08T21:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/giulia-tess",
+            "rel": "details",
+            "type": "application/vnd.show+json;charset=utf-8"
+          }
+        ]
+      }
+    },
+    {
+      "channel_name": "2",
+      "now": {
+        "broadcast_title": "ARRHYTHMIA",
+        "start_timestamp": "2025-01-07T14:00:00Z",
+        "end_timestamp": "2025-01-07T16:00:00Z",
+        "embeds": {
+          "details": {
+            "status": "pending",
+            "updated": "2025-01-06T16:15:25+00:00",
+            "name": "ARRHYTHMIA",
+            "description": "Broadcasting out of Birmingham, Arrhythmia is a monthly exploration of interesting new audio and abnormal rhythms. Expect irregular, dark or heavy - but not always.",
+            "description_html": "<h3>Broadcasting out of Birmingham, Arrhythmia is a monthly exploration of interesting new audio and abnormal rhythms. Expect irregular, dark or heavy - but not always.</h3>",
+            "external_links": [
+              "https://twitter.com/its_arrhythmia?lang=en",
+              "http://itsarrhythmia.tumblr.com/"
+            ],
+            "moods": [
+              {
+                "id": "moods-minimal-talkin",
+                "value": "Minimal Talkin"
+              },
+              {
+                "id": "moods-nosebleed",
+                "value": "Nosebleed"
+              }
+            ],
+            "genres": [],
+            "location_short": "BHM",
+            "location_long": "Birmingham",
+            "intensity": null,
+            "media": {
+              "background_large": "https://media2.ntslive.co.uk/resize/1600x1600/7ea28114-e227-4fb6-ae67-5dff0f4562ad_1736121600.png",
+              "background_medium_large": "https://media2.ntslive.co.uk/resize/800x800/7ea28114-e227-4fb6-ae67-5dff0f4562ad_1736121600.png",
+              "background_medium": "https://media.ntslive.co.uk/resize/400x400/7ea28114-e227-4fb6-ae67-5dff0f4562ad_1736121600.png",
+              "background_small": "https://media3.ntslive.co.uk/resize/200x200/7ea28114-e227-4fb6-ae67-5dff0f4562ad_1736121600.png",
+              "background_thumb": "https://media3.ntslive.co.uk/resize/100x100/7ea28114-e227-4fb6-ae67-5dff0f4562ad_1736121600.png",
+              "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/7ea28114-e227-4fb6-ae67-5dff0f4562ad_1736121600.png",
+              "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/7ea28114-e227-4fb6-ae67-5dff0f4562ad_1736121600.png",
+              "picture_medium": "https://media.ntslive.co.uk/resize/400x400/7ea28114-e227-4fb6-ae67-5dff0f4562ad_1736121600.png",
+              "picture_small": "https://media3.ntslive.co.uk/resize/200x200/7ea28114-e227-4fb6-ae67-5dff0f4562ad_1736121600.png",
+              "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/7ea28114-e227-4fb6-ae67-5dff0f4562ad_1736121600.png"
+            },
+            "episode_alias": "arrhythmia-7th-january-2025",
+            "show_alias": "ARRHYTHMIA",
+            "broadcast": "2025-01-07T14:00:00+00:00",
+            "mixcloud": null,
+            "audio_sources": [],
+            "brand": {},
+            "embeds": {},
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://www.nts.live/api/v2/shows/ARRHYTHMIA/episodes/arrhythmia-7th-january-2025",
+                "type": "application/vnd.episode+json;charset=utf-8"
+              },
+              {
+                "rel": "show",
+                "href": "https://www.nts.live/api/v2/shows/ARRHYTHMIA",
+                "type": "application/vnd.show+json;charset=utf-8"
+              },
+              {
+                "rel": "tracklist",
+                "href": "https://www.nts.live/api/v2/shows/ARRHYTHMIA/episodes/arrhythmia-7th-january-2025/tracklist",
+                "type": "application/vnd.track-list+json;charset=utf-8"
+              }
+            ]
+          }
+        },
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/ARRHYTHMIA/episodes/arrhythmia-7th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next": {
+        "broadcast_title": "IN FOCUS - THROBBING GRISTLE",
+        "start_timestamp": "2025-01-07T16:00:00Z",
+        "end_timestamp": "2025-01-07T18:00:00Z",
+        "embeds": {
+          "details": {
+            "status": "published",
+            "updated": "2023-05-17T11:01:22+00:00",
+            "name": "Post Punk Britain: In Focus - Throbbing Gristle",
+            "description": "No artists resonate more with the experimentation and nebulous genre-lessness of the UK post punk era than Throbbing Gristle. This two hour episode dives deep into their work, featuring related projects, solo work and more.",
+            "description_html": "<h3>No artists resonate more with the experimentation and nebulous genre-lessness of the UK post punk era than Throbbing Gristle. This two hour episode dives deep into their work, featuring related projects, solo work and more.</h3>",
+            "external_links": [],
+            "moods": [
+              {
+                "id": "moods-no-talkin",
+                "value": "No Talkin"
+              },
+              {
+                "id": "moods-audio-research",
+                "value": "AUDIO RESEARCH"
+              }
+            ],
+            "genres": [
+              {
+                "id": "genres-postpunkwave-postpunk",
+                "value": "Post Punk"
+              },
+              {
+                "id": "genres-avantgarde-experimental",
+                "value": "Experimental"
+              },
+              {
+                "id": "genres-postpunkwave-industrial",
+                "value": "Industrial "
+              }
+            ],
+            "location_short": "LDN",
+            "location_long": "Hull",
+            "intensity": null,
+            "media": {
+              "background_large": "https://media2.ntslive.co.uk/resize/1600x1600/928c2b7d-82a3-41ce-ab6f-beaf9b5e5cce_1683676800.jpeg",
+              "background_medium_large": "https://media2.ntslive.co.uk/resize/800x800/928c2b7d-82a3-41ce-ab6f-beaf9b5e5cce_1683676800.jpeg",
+              "background_medium": "https://media.ntslive.co.uk/resize/400x400/928c2b7d-82a3-41ce-ab6f-beaf9b5e5cce_1683676800.jpeg",
+              "background_small": "https://media3.ntslive.co.uk/resize/200x200/928c2b7d-82a3-41ce-ab6f-beaf9b5e5cce_1683676800.jpeg",
+              "background_thumb": "https://media3.ntslive.co.uk/resize/100x100/928c2b7d-82a3-41ce-ab6f-beaf9b5e5cce_1683676800.jpeg",
+              "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/928c2b7d-82a3-41ce-ab6f-beaf9b5e5cce_1683676800.jpeg",
+              "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/928c2b7d-82a3-41ce-ab6f-beaf9b5e5cce_1683676800.jpeg",
+              "picture_medium": "https://media.ntslive.co.uk/resize/400x400/928c2b7d-82a3-41ce-ab6f-beaf9b5e5cce_1683676800.jpeg",
+              "picture_small": "https://media3.ntslive.co.uk/resize/200x200/928c2b7d-82a3-41ce-ab6f-beaf9b5e5cce_1683676800.jpeg",
+              "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/928c2b7d-82a3-41ce-ab6f-beaf9b5e5cce_1683676800.jpeg"
+            },
+            "episode_alias": "post-punk-in-britain-post-punk-in-britain---in-focus-throbbing-gristle-11th-may-2023",
+            "show_alias": "post-punk-in-britain",
+            "broadcast": "2023-05-16T10:00:00+00:00",
+            "mixcloud": "https://www.mixcloud.com/NTSRadio/post-punk-britain-in-focus-throbbing-gristle-16th-may-2023/",
+            "audio_sources": [
+              {
+                "url": "https://soundcloud.com/user-626444105/post-punk-britain-in-focus-throbbing-gristle-160523?si=a3e4bdbdd85b48e1a2301479d63ab4e6&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing",
+                "source": "soundcloud"
+              }
+            ],
+            "brand": {},
+            "embeds": {},
+            "links": [
+              {
+                "rel": "self",
+                "href": "https://www.nts.live/api/v2/shows/post-punk-in-britain/episodes/post-punk-in-britain-post-punk-in-britain---in-focus-throbbing-gristle-11th-may-2023",
+                "type": "application/vnd.episode+json;charset=utf-8"
+              },
+              {
+                "rel": "show",
+                "href": "https://www.nts.live/api/v2/shows/post-punk-in-britain",
+                "type": "application/vnd.show+json;charset=utf-8"
+              },
+              {
+                "rel": "tracklist",
+                "href": "https://www.nts.live/api/v2/shows/post-punk-in-britain/episodes/post-punk-in-britain-post-punk-in-britain---in-focus-throbbing-gristle-11th-may-2023/tracklist",
+                "type": "application/vnd.track-list+json;charset=utf-8"
+              }
+            ]
+          }
+        },
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/post-punk-in-britain/episodes/post-punk-in-britain-post-punk-in-britain---in-focus-throbbing-gristle-11th-may-2023",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next2": {
+        "broadcast_title": "PENDER STREET STEPPERS w/ Jeremy Castillo",
+        "start_timestamp": "2025-01-07T18:00:00Z",
+        "end_timestamp": "2025-01-07T20:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/pender-street-steppers/episodes/pender-street-steppers-7th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next3": {
+        "broadcast_title": "Nick Hakim",
+        "start_timestamp": "2025-01-07T20:00:00Z",
+        "end_timestamp": "2025-01-07T21:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/nick-hakim",
+            "rel": "details",
+            "type": "application/vnd.show+json;charset=utf-8"
+          }
+        ]
+      },
+      "next4": {
+        "broadcast_title": "Budgie (R)",
+        "start_timestamp": "2025-01-07T21:00:00Z",
+        "end_timestamp": "2025-01-07T22:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/budgie/episodes/budgie-30th-may-2024",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next5": {
+        "broadcast_title": "BRWN W/ AHWLEE &amp; PINK SIIFU",
+        "start_timestamp": "2025-01-07T22:00:00Z",
+        "end_timestamp": "2025-01-08T00:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/brwn/episodes/brwn-7th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next6": {
+        "broadcast_title": "WEST COAST FOG: Misty Mysticism",
+        "start_timestamp": "2025-01-08T00:00:00Z",
+        "end_timestamp": "2025-01-08T01:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/west-coast-fog/episodes/west-coast-fog-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next7": {
+        "broadcast_title": "Freedom To Spend w/ Pete Swanson",
+        "start_timestamp": "2025-01-08T01:00:00Z",
+        "end_timestamp": "2025-01-08T02:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/freedom-to-spend/episodes/freedom-to-spend-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next8": {
+        "broadcast_title": "Blooming In Filth w/ Vitruvian Grimace",
+        "start_timestamp": "2025-01-08T02:00:00Z",
+        "end_timestamp": "2025-01-08T03:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/crisis-acting/episodes/crisis-acting-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next9": {
+        "broadcast_title": "Horsegirl Sounds Radio Hour",
+        "start_timestamp": "2025-01-08T03:00:00Z",
+        "end_timestamp": "2025-01-08T04:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/horsegirl/episodes/horsegirl-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next10": {
+        "broadcast_title": "Underground &amp; Black w/ Ash Lauryn (R)",
+        "start_timestamp": "2025-01-08T04:00:00Z",
+        "end_timestamp": "2025-01-08T05:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/ash-lauryn/episodes/ash-lauryn-3rd-october-2024",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next11": {
+        "broadcast_title": "WORD OF COMMAND",
+        "start_timestamp": "2025-01-08T05:00:00Z",
+        "end_timestamp": "2025-01-08T06:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/word-of-command/episodes/word-of-command-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next12": {
+        "broadcast_title": "TRiNH (R)",
+        "start_timestamp": "2025-01-08T06:00:00Z",
+        "end_timestamp": "2025-01-08T07:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/trinh/episodes/trinh-7th-june-2024",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next13": {
+        "broadcast_title": "INSOLAR W/ CAMI LAYÉ OKÚN (R)",
+        "start_timestamp": "2025-01-08T07:00:00Z",
+        "end_timestamp": "2025-01-08T08:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/cami-laye-okun/episodes/cami-laye-okun-13th-august-2024",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next14": {
+        "broadcast_title": "Forager Records - Dimensionless Unity Takeover (R)",
+        "start_timestamp": "2025-01-08T08:00:00Z",
+        "end_timestamp": "2025-01-08T09:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/forager-records/episodes/forager-records-10th-october-2024",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next15": {
+        "broadcast_title": "A Colourful Storm - Young Sparks (R)",
+        "start_timestamp": "2025-01-08T09:00:00Z",
+        "end_timestamp": "2025-01-08T10:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/a-colourful-storm/episodes/a-colourful-storm-20th-may-2024",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next16": {
+        "broadcast_title": "JIM O&#039;ROURKE (R)",
+        "start_timestamp": "2025-01-08T10:00:00Z",
+        "end_timestamp": "2025-01-08T11:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/jim-o-rourke/episodes/jim-o-rourke-16th-may-2024",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      },
+      "next17": {
+        "broadcast_title": "HTRK",
+        "start_timestamp": "2025-01-08T12:00:00Z",
+        "end_timestamp": "2025-01-08T13:00:00Z",
+        "embeds": {},
+        "links": [
+          {
+            "href": "https://www.nts.live/api/v2/shows/htrk/episodes/htrk-8th-january-2025",
+            "rel": "details",
+            "type": "application/vnd.episode+json;charset=utf-8"
+          }
+        ]
+      }
+    }
+  ],
+  "links": [
+    {
+      "rel": "self",
+      "href": "https://www.nts.live/api/v2/live",
+      "type": "application/vnd.live-list+json;charset=utf-8"
+    }
+  ]
+}
