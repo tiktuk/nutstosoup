@@ -8,6 +8,88 @@ from requests.exceptions import RequestException, Timeout
 
 
 @dataclass
+class Media:
+    """Represents media URLs for a broadcast."""
+
+    background_large: str | None = None
+    background_medium_large: str | None = None
+    background_medium: str | None = None
+    background_small: str | None = None
+    background_thumb: str | None = None
+    picture_large: str | None = None
+    picture_medium_large: str | None = None
+    picture_medium: str | None = None
+    picture_small: str | None = None
+    picture_thumb: str | None = None
+
+
+@dataclass
+class Link:
+    """Represents a link in the API response."""
+
+    rel: str
+    href: str
+    type: str
+
+
+@dataclass
+class AudioSource:
+    """Represents an audio source."""
+
+    url: str
+    source: str
+
+
+@dataclass
+class Genre:
+    """Represents a genre."""
+
+    id: str
+    value: str
+
+
+@dataclass
+class Mood:
+    """Represents a mood."""
+
+    id: str
+    value: str
+
+
+@dataclass
+class Details:
+    """Represents the detailed information about a broadcast."""
+
+    status: str
+    updated: str
+    name: str
+    description: str
+    description_html: str
+    external_links: List[str]
+    moods: List[Mood]
+    genres: List[Genre]
+    location_short: str | None
+    location_long: str | None
+    intensity: str | None
+    media: Media
+    episode_alias: str
+    show_alias: str
+    broadcast: str
+    mixcloud: str | None
+    audio_sources: List[AudioSource]
+    brand: Dict[str, Any]
+    embeds: Dict[str, Any]
+    links: List[Link]
+
+
+@dataclass
+class Embeds:
+    """Represents the embeds section of a broadcast."""
+
+    details: Details
+
+
+@dataclass
 class Broadcast:
     """Represents a live broadcast on an NTS channel."""
 
@@ -15,6 +97,8 @@ class Broadcast:
     title: str
     start_time: str
     end_time: str
+    embeds: Embeds
+    links: List[Link]
     name: str | None = None
     description: str | None = None
     location_short: str | None = None
@@ -182,23 +266,72 @@ def get_current_broadcasts(timeout: int = 10) -> List[Broadcast]:
     broadcasts = []
     for channel in live_data["results"]:
         if "now" in channel:
-            broadcast = channel["now"]
-            details = broadcast.get("embeds", {}).get("details", {})
-            picture_url = details.get("media", {}).get("picture_large")
+            broadcast_data = channel["now"]
+            details_data = broadcast_data.get("embeds", {}).get("details", {})
+
+            # Create Media object
+            media = (
+                Media(**details_data.get("media", {}))
+                if details_data.get("media")
+                else Media()
+            )
+
+            # Create Links
+            links = [Link(**link) for link in broadcast_data.get("links", [])]
+
+            # Create Genres and Moods
+            genres = [Genre(**genre) for genre in details_data.get("genres", [])]
+            moods = [Mood(**mood) for mood in details_data.get("moods", [])]
+
+            # Create AudioSources
+            audio_sources = [
+                AudioSource(**source)
+                for source in details_data.get("audio_sources", [])
+            ]
+
+            # Create Details
+            details = Details(
+                status=details_data.get("status", ""),
+                updated=details_data.get("updated", ""),
+                name=details_data.get("name", ""),
+                description=details_data.get("description", ""),
+                description_html=details_data.get("description_html", ""),
+                external_links=details_data.get("external_links", []),
+                moods=moods,
+                genres=genres,
+                location_short=details_data.get("location_short"),
+                location_long=details_data.get("location_long"),
+                intensity=details_data.get("intensity"),
+                media=media,
+                episode_alias=details_data.get("episode_alias", ""),
+                show_alias=details_data.get("show_alias", ""),
+                broadcast=details_data.get("broadcast", ""),
+                mixcloud=details_data.get("mixcloud"),
+                audio_sources=audio_sources,
+                brand=details_data.get("brand", {}),
+                embeds=details_data.get("embeds", {}),
+                links=[Link(**link) for link in details_data.get("links", [])],
+            )
+
+            # Create Embeds
+            embeds = Embeds(details=details)
+
             broadcasts.append(
                 Broadcast(
                     channel=channel["channel_name"],
-                    title=html.unescape(broadcast["broadcast_title"]),
-                    start_time=broadcast["start_timestamp"],
-                    end_time=broadcast["end_timestamp"],
-                    name=details.get("name"),
-                    description=details.get("description"),
-                    location_short=details.get("location_short"),
-                    location_long=details.get("location_long"),
-                    show_alias=details.get("show_alias"),
-                    episode_alias=details.get("episode_alias"),
-                    picture_url=picture_url,
-                    raw_json=broadcast,
+                    title=html.unescape(broadcast_data["broadcast_title"]),
+                    start_time=broadcast_data["start_timestamp"],
+                    end_time=broadcast_data["end_timestamp"],
+                    embeds=embeds,
+                    links=links,
+                    name=details_data.get("name"),
+                    description=details_data.get("description"),
+                    location_short=details_data.get("location_short"),
+                    location_long=details_data.get("location_long"),
+                    show_alias=details_data.get("show_alias"),
+                    episode_alias=details_data.get("episode_alias"),
+                    picture_url=media.picture_large,
+                    raw_json=broadcast_data,
                 )
             )
 

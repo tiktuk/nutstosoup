@@ -34,19 +34,90 @@ Represents a live broadcast on an NTS channel:
 
 ```python
 @dataclass
+class Media:
+    """Media URLs for a broadcast."""
+    background_large: str | None         # Large background image
+    background_medium_large: str | None  # Medium-large background
+    background_medium: str | None        # Medium background
+    background_small: str | None         # Small background
+    background_thumb: str | None         # Thumbnail background
+    picture_large: str | None            # Large picture
+    picture_medium_large: str | None     # Medium-large picture
+    picture_medium: str | None           # Medium picture
+    picture_small: str | None            # Small picture
+    picture_thumb: str | None            # Thumbnail picture
+
+@dataclass
+class Link:
+    """API link with relation and type."""
+    rel: str                   # Link relation
+    href: str                  # Link URL
+    type: str                  # Content type
+
+@dataclass
+class AudioSource:
+    """Audio stream source."""
+    url: str                   # Stream URL
+    source: str                # Source platform
+
+@dataclass
+class Genre:
+    """Show genre."""
+    id: str                    # Genre ID
+    value: str                 # Genre name
+
+@dataclass
+class Mood:
+    """Show mood."""
+    id: str                    # Mood ID
+    value: str                 # Mood name
+
+@dataclass
+class Details:
+    """Detailed broadcast information."""
+    status: str                # Publication status
+    updated: str               # Last update time
+    name: str                  # Show name
+    description: str           # Show description
+    description_html: str      # HTML description
+    external_links: List[str]  # External URLs
+    moods: List[Mood]         # Show moods
+    genres: List[Genre]       # Show genres
+    location_short: str | None # Short location
+    location_long: str | None  # Full location
+    intensity: str | None      # Show intensity
+    media: Media              # Media URLs
+    episode_alias: str        # Episode URL alias
+    show_alias: str           # Show URL alias
+    broadcast: str            # Broadcast time
+    mixcloud: str | None      # Mixcloud URL
+    audio_sources: List[AudioSource]  # Audio streams
+    brand: Dict[str, Any]     # Brand info
+    embeds: Dict[str, Any]    # Embedded content
+    links: List[Link]         # API links
+
+@dataclass
+class Embeds:
+    """Embedded content container."""
+    details: Details          # Show details
+
+@dataclass
 class Broadcast:
-    channel: str               # Channel name (e.g. "1", "2")
-    title: str                 # Broadcast title
-    start_time: str            # Start timestamp
-    end_time: str              # End timestamp
-    name: str | None           # Show name (optional)
-    description: str | None    # Show description (optional)
-    location_short: str | None  # Short location code (optional)
-    location_long: str | None   # Full location name (optional)
-    show_alias: str | None     # Show alias for URLs (optional)
-    episode_alias: str | None  # Episode alias for URLs (optional)
-    picture_url: str | None    # Show artwork URL (optional)
-    raw_json: Dict[str, Any] | None  # Original API response data (optional)
+    """Live broadcast on an NTS channel."""
+    channel: str              # Channel name (e.g. "1", "2")
+    title: str               # Broadcast title
+    start_time: str          # Start timestamp
+    end_time: str            # End timestamp
+    embeds: Embeds           # Embedded content
+    links: List[Link]        # API links
+    name: str | None = None           # Show name (optional)
+    description: str | None = None    # Show description (optional)
+    location_short: str | None = None # Short location code (optional)
+    location_long: str | None = None  # Full location name (optional)
+    show_alias: str | None = None    # Show alias for URLs (optional)
+    episode_alias: str | None = None # Episode alias for URLs (optional)
+    picture_url: str | None = None   # Show artwork URL (optional)
+    raw_json: Dict[str, Any] | None = None  # Original API response data
 ```
 
 Example of the json of a broadcast:
@@ -175,13 +246,40 @@ try:
     # Get current broadcasts for both channels
     broadcasts = get_current_broadcasts(timeout=10)  # timeout in seconds
     
-    # Print current shows
+    # Print current shows with detailed information
     for broadcast in broadcasts:
         print(f"Now playing on Channel {broadcast.channel}: {broadcast.title}")
-        if broadcast.description:
-            print(f"Description: {broadcast.description}")
-        if broadcast.location_long:
-            print(f"Location: {broadcast.location_long}")
+        
+        # Access nested details through the embeds structure
+        details = broadcast.embeds.details
+        
+        if details.description:
+            print(f"Description: {details.description}")
+        
+        if details.genres:
+            print("Genres:")
+            for genre in details.genres:
+                print(f"- {genre.value}")
+                
+        if details.moods:
+            print("Moods:")
+            for mood in details.moods:
+                print(f"- {mood.value}")
+                
+        if details.location_long:
+            print(f"Location: {details.location_long}")
+            
+        if details.audio_sources:
+            print("Audio Sources:")
+            for source in details.audio_sources:
+                print(f"- {source.source}: {source.url}")
+                
+        if details.mixcloud:
+            print(f"Mixcloud: {details.mixcloud}")
+            
+        if details.media.picture_large:
+            print(f"Artwork: {details.media.picture_large}")
+            
         print(f"Start time: {broadcast.start_time}")
         print(f"End time: {broadcast.end_time}")
 
