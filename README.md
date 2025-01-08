@@ -14,6 +14,14 @@ or
 pip3 install nutstosoup
 ```
 
+## Project Structure
+
+The library is organized into the following modules:
+
+- `nutstosoup/__init__.py`: Core API functionality and error handling
+- `nutstosoup/models.py`: Data models for API responses
+- `nutstosoup/__main__.py`: Command-line interface
+
 ## Error Handling
 
 The library uses exceptions to handle errors:
@@ -325,8 +333,9 @@ from nutstosoup import (
     get_mixtapes,
     NTSAPIError,
     NTSAPITimeoutError,
-    NTSAPIResponseError
+    NTSAPIResponseError,
 )
+from nutstosoup.models import Broadcast, Mixtape
 
 try:
     # Get current broadcasts for both channels
