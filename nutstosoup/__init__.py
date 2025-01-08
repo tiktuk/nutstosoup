@@ -110,17 +110,58 @@ class Broadcast:
 
 
 @dataclass
+class MixtapeMedia:
+    """Represents media URLs for a mixtape."""
+    animation_large_landscape: str | None = None
+    animation_large_portrait: str | None = None
+    animation_thumb: str | None = None
+    icon_black: str | None = None
+    icon_white: str | None = None
+    picture_large: str | None = None
+    picture_medium_large: str | None = None
+    picture_medium: str | None = None
+    picture_small: str | None = None
+    picture_thumb: str | None = None
+
+
+@dataclass
+class MixtapeCredit:
+    """Represents a credit in a mixtape."""
+    name: str
+    path: str
+
+
+@dataclass
+class MixtapeMetadata:
+    """Represents mixtape list metadata."""
+    subtitle: str
+    credits: str
+    mq_host: str
+    animation_large_portrait: str
+
+
+@dataclass
 class Mixtape:
     """Represents an NTS mixtape."""
-
+    mixtape_alias: str
     title: str
     subtitle: str
     description: str
-    stream_url: str
-    mixtape_alias: str
-    picture_url: str | None = None
-    credits: list[dict[str, str]] | None = None
+    description_html: str
+    audio_stream_endpoint: str
+    credits: List[MixtapeCredit]
+    media: MixtapeMedia
+    now_playing_topic: str
+    links: List[Link]
     raw_json: Dict[str, Any] | None = None
+
+
+@dataclass
+class MixtapeList:
+    """Represents a list of mixtapes with metadata."""
+    metadata: MixtapeMetadata
+    results: List[Mixtape]
+    links: List[Link]
 
 
 class NTSAPIError(Exception):
@@ -209,7 +250,7 @@ def get_nts_mixtapes_data(timeout: int = 10) -> Dict[str, Any]:
 
 
 def get_mixtapes(timeout: int = 10) -> Dict[str, Mixtape]:
-    """Get a simplified dictionary of NTS mixtapes.
+    """Get a dictionary of NTS mixtapes.
 
     Args:
         timeout: Request timeout in seconds
@@ -229,16 +270,28 @@ def get_mixtapes(timeout: int = 10) -> Dict[str, Mixtape]:
 
     mixtapes = {}
     for mixtape in mixtapes_data["results"]:
-        picture_url = mixtape.get("media", {}).get("picture_large")
+        # Create media
+        media = MixtapeMedia(**mixtape.get("media", {}))
+
+        # Create credits
+        credits = [MixtapeCredit(**credit) for credit in mixtape.get("credits", [])]
+
+        # Create links
+        links = [Link(**link) for link in mixtape.get("links", [])]
+
+        # Create mixtape
         mixtapes[mixtape["mixtape_alias"]] = Mixtape(
+            mixtape_alias=mixtape["mixtape_alias"],
             title=mixtape["title"],
             subtitle=mixtape["subtitle"],
             description=mixtape["description"],
-            stream_url=mixtape["audio_stream_endpoint"],
-            mixtape_alias=mixtape["mixtape_alias"],
-            picture_url=picture_url,
-            credits=mixtape.get("credits"),
-            raw_json=mixtape,
+            description_html=mixtape["description_html"],
+            audio_stream_endpoint=mixtape["audio_stream_endpoint"],
+            credits=credits,
+            media=media,
+            now_playing_topic=mixtape.get("now_playing_topic", ""),
+            links=links,
+            raw_json=mixtape
         )
 
     return mixtapes

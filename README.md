@@ -26,7 +26,7 @@ All functions accept an optional `timeout` parameter (in seconds, defaults to 10
 
 ## Data Classes
 
-The library provides two dataclasses for working with NTS data:
+The library provides dataclasses for working with NTS data:
 
 ### Broadcast
 
@@ -218,15 +218,54 @@ Represents an NTS mixtape:
 
 ```python
 @dataclass
+class MixtapeMedia:
+    """Media URLs for a mixtape."""
+    animation_large_landscape: str | None  # Large landscape animation
+    animation_large_portrait: str | None   # Large portrait animation
+    animation_thumb: str | None            # Thumbnail animation
+    icon_black: str | None                 # Black icon
+    icon_white: str | None                 # White icon
+    picture_large: str | None              # Large picture
+    picture_medium_large: str | None       # Medium-large picture
+    picture_medium: str | None             # Medium picture
+    picture_small: str | None              # Small picture
+    picture_thumb: str | None              # Thumbnail picture
+
+@dataclass
+class MixtapeCredit:
+    """Credit for a contributing show."""
+    name: str                              # Show name
+    path: str                              # Show URL path
+
+@dataclass
+class MixtapeMetadata:
+    """Metadata for mixtape list."""
+    subtitle: str                          # List subtitle
+    credits: str                           # Credits text
+    mq_host: str                          # Media host
+    animation_large_portrait: str          # Large portrait animation
+
+@dataclass
 class Mixtape:
-    title: str               # Mixtape title
-    subtitle: str            # Short description
-    description: str         # Full description
-    stream_url: str          # Audio stream URL
-    mixtape_alias: str       # Mixtape alias for URLs
-    picture_url: str | None  # Artwork URL (optional)
-    credits: list[dict[str, str]] | None  # Contributing shows (optional)
-    raw_json: Dict[str, Any] | None  # Original API response data (optional)
+    """NTS mixtape."""
+    mixtape_alias: str                     # Mixtape alias for URLs
+    title: str                             # Mixtape title
+    subtitle: str                          # Short description
+    description: str                       # Full description
+    description_html: str                  # HTML description
+    audio_stream_endpoint: str             # Audio stream URL
+    credits: List[MixtapeCredit]           # Contributing shows
+    media: MixtapeMedia                    # Media URLs
+    now_playing_topic: str                 # Now playing topic
+    links: List[Link]                      # API links
+    raw_json: Dict[str, Any] | None        # Original API response data (optional)
+
+@dataclass
+class MixtapeList:
+    """List of mixtapes with metadata."""
+    metadata: MixtapeMetadata              # List metadata
+    results: List[Mixtape]                 # Mixtapes
+    links: List[Link]                      # API links
 ```
 
 Example of the json of a single mixtape:
@@ -335,26 +374,26 @@ try:
     
     # Print available mixtapes
     for mixtape in mixtapes.values():
-        print(f"\n{mixtape.title}")
+        print(f"\n{mixtape.title} ({mixtape.mixtape_alias})")
         print(f"{mixtape.subtitle}")
         print(f"Description: {mixtape.description}")
         if mixtape.credits:
             print("\nFeaturing:")
-            for credit in mixtape.credits[:5]:
-                print(f"- {credit['name']}")
+            for credit in mixtape.credits[:5]:  # Show first 5 credits
+                print(f"- {credit.name}")  # Now using dataclass attribute
             if len(mixtape.credits) > 5:
                 print(f"...and {len(mixtape.credits) - 5} more")
-        print(f"Stream URL: {mixtape.stream_url}")
+        print(f"\n🎵 {mixtape.audio_stream_endpoint}")  # Updated field name
         
-        # Access additional fields from the raw API response
-        if mixtape.raw_json and "some_extra_field" in mixtape.raw_json:
-            print(f"Extra field: {mixtape.raw_json['some_extra_field']}")
+        # Access media URLs
+        if mixtape.media.picture_large:
+            print(f"Artwork: {mixtape.media.picture_large}")
         
     # Get a specific mixtape by alias
     poolside = mixtapes.get("poolside")
     if poolside:
         print(f"\nPoolside mixtape: {poolside.title}")
-        print(f"Stream URL: {poolside.stream_url}")
+        print(f"Stream URL: {poolside.audio_stream_endpoint}")
 
 except NTSAPITimeoutError:
     print("Request timed out")
@@ -391,6 +430,7 @@ Featuring:
 ...and 29 more
 
 Stream URL: https://stream-mixtape-geo.ntslive.net/mixtape4
+Artwork: https://media2.ntslive.co.uk/resize/1600x1600/cf5afb01-5a68-4fa0-a1c6-415b35d09ed6_1542931200.jpeg
 
 Slow Focus (slow-focus)
 Meditative, relaxing and beatless: ambient, drone and ragas.
@@ -405,6 +445,7 @@ Featuring:
 ...and 30 more
 
 Stream URL: https://stream-mixtape-geo.ntslive.net/mixtape
+Artwork: https://media2.ntslive.co.uk/resize/1600x1600/01f7cbe6-235f-4e33-8f2f-70152c91edf1_1542931200.jpeg
 
 Poolside mixtape: Poolside
 Stream URL: https://stream-mixtape-geo.ntslive.net/mixtape4

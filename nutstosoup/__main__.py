@@ -73,10 +73,10 @@ def main():
             if mixtape.credits:
                 print("\nFeaturing:")
                 for credit in mixtape.credits[:5]:  # Show first 5 credits
-                    print(f"- {credit['name']}")
+                    print(f"- {credit.name}")
                 if len(mixtape.credits) > 5:
                     print(f"...and {len(mixtape.credits) - 5} more")
-            print(f"\n🎵 {mixtape.stream_url}")
+            print(f"\n🎵 {mixtape.audio_stream_endpoint}")
 
     except NTSAPITimeoutError:
         print("Error: Request timed out")
