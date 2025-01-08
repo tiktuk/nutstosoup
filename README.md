@@ -11,16 +11,22 @@ uv add nutstosoup
 or
 
 ```bash
-pip3 install nutstosoup
+pip install nutstosoup
 ```
 
 ## Project Structure
 
 The library is organized into the following modules:
 
-- `nutstosoup/__init__.py`: Core API functionality and error handling
-- `nutstosoup/models.py`: Data models for API responses
+- `nutstosoup/__init__.py`: Core API functionality, error handling, and data models
+- `nutstosoup/models.py`: Internal data model definitions
 - `nutstosoup/__main__.py`: Command-line interface
+
+All public API functions, error types, and data models are available directly from the package root:
+
+```python
+from nutstosoup import Broadcast, get_current_broadcasts  # Direct imports
+```
 
 ## Error Handling
 
@@ -329,13 +335,17 @@ There's a complete example of mixtape json in the `examples` directory.
 
 ```python
 from nutstosoup import (
+    # API functions
     get_current_broadcasts,
     get_mixtapes,
+    # Error types
     NTSAPIError,
     NTSAPITimeoutError,
     NTSAPIResponseError,
+    # Data models
+    Broadcast,
+    Mixtape
 )
-from nutstosoup.models import Broadcast, Mixtape
 
 try:
     # Get current broadcasts for both channels
