@@ -229,7 +229,54 @@ class Mixtape:
     raw_json: Dict[str, Any] | None  # Original API response data (optional)
 ```
 
-There's an example of mixtape json in the `examples` directory.
+Example of the json of a single mixtape:
+
+```json
+    {
+      "mixtape_alias": "poolside",
+      "title": "Poolside",
+      "subtitle": "Balearic, boogie, and sophisti-pop for poolsides, beaches and car stereos.",
+      "description": "Whisk yourself away with an unlimited supply of NTS’ most sun-kissed mixes, crossing all borders and genres.",
+      "description_html": "<p>Whisk yourself away with an unlimited supply of NTS’ most sun-kissed mixes, crossing all borders and genres.</p>",
+      "audio_stream_endpoint": "https://stream-mixtape-geo.ntslive.net/mixtape4",
+      "credits": [
+        {
+          "name": "All Styles All Smiles",
+          "path": "/shows/all-styles-all-smiles"
+        },
+        {
+          "name": "Altered Soul Experiment w/ Amila",
+          "path": "/shows/amila"
+        },
+        {
+          "name": "Benedek",
+          "path": "/shows/benedek"
+        },
+      ],
+      "media": {
+        "animation_large_landscape": "https://media2.ntslive.co.uk/static/poolside-1600x900-30fps-a4a1961d0f96f55f3e1d41dcdc162293.mp4",
+        "animation_large_portrait": "https://media2.ntslive.co.uk/static/poolside-1080x1920-40fps-d0040a4520c9ae2bbd2abee183b0a899.mp4",
+        "animation_thumb": "https://media3.ntslive.co.uk/static/poolside-120x120-30fps-1fcf6fe33d4ce3eedb66f41573196b34.mp4",
+        "icon_black": "https://media.ntslive.co.uk/crop/128x128/4bd68475-5fb4-457c-9a16-0ae353962c10_1542844800.png",
+        "icon_white": "https://media.ntslive.co.uk/crop/128x128/46efe65a-9d2d-4c59-ac9b-4f1542ec1ef5_1542844800.png",
+        "picture_large": "https://media2.ntslive.co.uk/resize/1600x1600/cf5afb01-5a68-4fa0-a1c6-415b35d09ed6_1542931200.jpeg",
+        "picture_medium": "https://media.ntslive.co.uk/resize/400x400/cf5afb01-5a68-4fa0-a1c6-415b35d09ed6_1542931200.jpeg",
+        "picture_medium_large": "https://media2.ntslive.co.uk/resize/800x800/cf5afb01-5a68-4fa0-a1c6-415b35d09ed6_1542931200.jpeg",
+        "picture_small": "https://media3.ntslive.co.uk/resize/200x200/cf5afb01-5a68-4fa0-a1c6-415b35d09ed6_1542931200.jpeg",
+        "picture_thumb": "https://media3.ntslive.co.uk/resize/100x100/cf5afb01-5a68-4fa0-a1c6-415b35d09ed6_1542931200.jpeg"
+      },
+      "now_playing_topic": "",
+      "links": [
+        {
+          "rel": "self",
+          "href": "https://www.nts.live/api/v2/mixtapes/poolside",
+          "type": "application/vnd.mixtape+json;charset=utf-8"
+        }
+      ]
+    }
+```
+
+There's a complete example of mixtape json in the `examples` directory.
 
 ## Usage
 
