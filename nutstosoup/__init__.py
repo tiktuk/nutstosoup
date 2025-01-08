@@ -8,7 +8,7 @@ from requests.exceptions import RequestException, Timeout
 
 
 @dataclass
-class Media:
+class BroadcastMedia:
     """Represents media URLs for a broadcast."""
 
     background_large: str | None = None
@@ -71,7 +71,7 @@ class Details:
     location_short: str | None
     location_long: str | None
     intensity: str | None
-    media: Media
+    media: BroadcastMedia
     episode_alias: str
     show_alias: str
     broadcast: str
@@ -324,9 +324,9 @@ def get_current_broadcasts(timeout: int = 10) -> List[Broadcast]:
 
             # Create Media object
             media = (
-                Media(**details_data.get("media", {}))
+                BroadcastMedia(**details_data.get("media", {}))
                 if details_data.get("media")
-                else Media()
+                else BroadcastMedia()
             )
 
             # Create Links

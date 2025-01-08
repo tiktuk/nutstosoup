@@ -34,7 +34,7 @@ Represents a live broadcast on an NTS channel:
 
 ```python
 @dataclass
-class Media:
+class BroadcastMedia:
     """Media URLs for a broadcast."""
     background_large: str | None         # Large background image
     background_medium_large: str | None  # Medium-large background
@@ -85,8 +85,8 @@ class Details:
     genres: List[Genre]       # Show genres
     location_short: str | None # Short location
     location_long: str | None  # Full location
-    intensity: str | None      # Show intensity
-    media: Media              # Media URLs
+    intensity: str | None     # Show intensity
+    media: BroadcastMedia     # Media URLs
     episode_alias: str        # Episode URL alias
     show_alias: str           # Show URL alias
     broadcast: str            # Broadcast time
