@@ -109,6 +109,7 @@ class Broadcast:
 @dataclass
 class MixtapeMedia:
     """Represents media URLs for a mixtape."""
+
     animation_large_landscape: str | None = None
     animation_large_portrait: str | None = None
     animation_thumb: str | None = None
@@ -124,6 +125,7 @@ class MixtapeMedia:
 @dataclass
 class MixtapeCredit:
     """Represents a credit in a mixtape."""
+
     name: str
     path: str
 
@@ -131,6 +133,7 @@ class MixtapeCredit:
 @dataclass
 class MixtapeMetadata:
     """Represents mixtape list metadata."""
+
     subtitle: str
     credits: str
     mq_host: str
@@ -140,6 +143,7 @@ class MixtapeMetadata:
 @dataclass
 class Mixtape:
     """Represents an NTS mixtape."""
+
     mixtape_alias: str
     title: str
     subtitle: str
@@ -156,6 +160,7 @@ class Mixtape:
 @dataclass
 class MixtapeList:
     """Represents a list of mixtapes with metadata."""
+
     metadata: MixtapeMetadata
     results: List[Mixtape]
     links: List[Link]
