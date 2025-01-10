@@ -176,9 +176,9 @@ def test_get_mixtapes_success(monkeypatch):
         poolside.description
         == "Whisk yourself away with an unlimited supply of NTS’ most sun-kissed mixes, crossing all borders and genres."
     )
-    assert poolside.stream_url == "https://stream-mixtape-geo.ntslive.net/mixtape4"
+    assert poolside.audio_stream_endpoint == "https://stream-mixtape-geo.ntslive.net/mixtape4"
     assert poolside.mixtape_alias == "poolside"
     assert poolside.credits is not None
     assert len(poolside.credits) > 0
-    assert poolside.credits[0]["name"] == "All Styles All Smiles"
-    assert poolside.credits[0]["path"] == "/shows/all-styles-all-smiles"
+    assert poolside.credits[0].name == "All Styles All Smiles"
+    assert poolside.credits[0].path == "/shows/all-styles-all-smiles"
