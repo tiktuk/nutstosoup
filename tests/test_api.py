@@ -118,7 +118,10 @@ def test_get_current_broadcasts_success(monkeypatch):
     assert broadcasts[0].start_time == "2025-01-07T15:00:00Z"
     assert broadcasts[0].end_time == "2025-01-07T17:00:00Z"
     assert broadcasts[0].name == "Ted Draws"
-    assert broadcasts[0].description == "Hip-hop scholar, esteemed illustrator and all round head Ted Draws holds down a killer 2 hour monthly slot on Tuesday afternoons."
+    assert (
+        broadcasts[0].description
+        == "Hip-hop scholar, esteemed illustrator and all round head Ted Draws holds down a killer 2 hour monthly slot on Tuesday afternoons."
+    )
     assert broadcasts[0].location_short == "LDN"
     assert broadcasts[0].location_long == "London"
     assert broadcasts[0].show_alias == "TED-DRAWS"
@@ -130,7 +133,10 @@ def test_get_current_broadcasts_success(monkeypatch):
     assert broadcasts[1].start_time == "2025-01-07T14:00:00Z"
     assert broadcasts[1].end_time == "2025-01-07T16:00:00Z"
     assert broadcasts[1].name == "ARRHYTHMIA"
-    assert broadcasts[1].description == "Broadcasting out of Birmingham, Arrhythmia is a monthly exploration of interesting new audio and abnormal rhythms. Expect irregular, dark or heavy - but not always."
+    assert (
+        broadcasts[1].description
+        == "Broadcasting out of Birmingham, Arrhythmia is a monthly exploration of interesting new audio and abnormal rhythms. Expect irregular, dark or heavy - but not always."
+    )
     assert broadcasts[1].location_short == "BHM"
     assert broadcasts[1].location_long == "Birmingham"
     assert broadcasts[1].show_alias == "ARRHYTHMIA"
@@ -162,8 +168,14 @@ def test_get_mixtapes_success(monkeypatch):
     # Test first mixtape (Poolside)
     poolside = mixtapes["poolside"]
     assert poolside.title == "Poolside"
-    assert poolside.subtitle == "Balearic, boogie, and sophisti-pop for poolsides, beaches and car stereos."
-    assert poolside.description == "Whisk yourself away with an unlimited supply of NTS’ most sun-kissed mixes, crossing all borders and genres."
+    assert (
+        poolside.subtitle
+        == "Balearic, boogie, and sophisti-pop for poolsides, beaches and car stereos."
+    )
+    assert (
+        poolside.description
+        == "Whisk yourself away with an unlimited supply of NTS’ most sun-kissed mixes, crossing all borders and genres."
+    )
     assert poolside.stream_url == "https://stream-mixtape-geo.ntslive.net/mixtape4"
     assert poolside.mixtape_alias == "poolside"
     assert poolside.credits is not None

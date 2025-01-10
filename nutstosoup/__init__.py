@@ -34,7 +34,7 @@ __all__ = [
     "AudioSource",
     "BroadcastMedia",
     "Broadcast",
-    "Details", 
+    "Details",
     "Embeds",
     "Genre",
     "Link",
@@ -172,7 +172,7 @@ def get_mixtapes(timeout: int = 10) -> Dict[str, Mixtape]:
             media=media,
             now_playing_topic=mixtape.get("now_playing_topic", ""),
             links=links,
-            raw_json=mixtape
+            raw_json=mixtape,
         )
 
     return mixtapes
