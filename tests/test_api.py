@@ -34,7 +34,7 @@ def test_fetch_nts_api_response_error(monkeypatch):
         status_code = 404
 
         def raise_for_status(self):
-            raise RequestException(f"404 Client Error: Not Found")
+            raise RequestException("404 Client Error: Not Found")
 
     def mock_get(*args, **kwargs):
         return MockResponse()
